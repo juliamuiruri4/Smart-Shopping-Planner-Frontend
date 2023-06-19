@@ -1,24 +1,33 @@
-import logo from './logo.svg';
 import './App.css';
+import CreateItem from './components/ShoppingItems/CreateItem';
+import ItemList from './components/ShoppingItems/ItemList';
+import PriceTag from './components/ShoppingItems/PriceTag';
+import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
+import { Container, Grid, Box } from '@mui/material';
+import Typography from '@mui/joy/Typography';
+
+// Apollo Client setup for GraphQL API calls to the backend server 
+const client = new ApolloClient({
+  uri: '/data-api/graphql',
+  cache: new InMemoryCache({
+    addTypename: false
+  })
+});
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ApolloProvider client={client}>
+       <Container maxWidth="lg" sx={{ padding:5 }}>
+        <Typography level="h1" color="info" variant='outlined'>Smart Shopping Planner</Typography>
+          <Grid item xs={12} md={6} sx={{ display: 'grid', gridTemplateColumns: '1fr 2fr 1fr', gap: '20px', paddingTop: '20px' }}>
+          { <CreateItem />}
+          { <ItemList />}
+            <Box>
+              { <PriceTag />}
+            </Box>
+          </Grid>
+      </Container>
+    </ApolloProvider>
   );
 }
 
