@@ -1,7 +1,7 @@
 import './App.css';
-import CreateItem from './components/ShoppingItems/CreateItem';
-import ItemList from './components/ShoppingItems/ItemList';
-import PriceTag from './components/ShoppingItems/PriceTag';
+import CreateItem from './components/CreateItem';
+import ItemList from './components/ItemList';
+import PriceTag from './components/PriceTag';
 import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
 import { Container, Grid, Box } from '@mui/material';
 import Typography from '@mui/joy/Typography';
