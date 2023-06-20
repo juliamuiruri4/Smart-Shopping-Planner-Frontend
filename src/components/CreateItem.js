@@ -40,7 +40,6 @@ function CreateItem({ refetch }) {
     const [name, setName] = useState('');
     const [quantity, setQuantity] = useState('');
     const [description, setDescription] = useState('');
-    const [price, setPrice] = useState('');
 
 
     const createItemRequest = async () => {
@@ -55,14 +54,12 @@ function CreateItem({ refetch }) {
                     category,
                     name,
                     quantity,
-                    description,
-                    price
+                    description
                 })
             });
             const data = await response.json();
             if (response.ok){
                 console.log(data);
-                const totalitemprice = data.price * data.quantity;
             } else {
                 throw new Error(data.error.message);
             }
@@ -71,10 +68,7 @@ function CreateItem({ refetch }) {
         }
     }
 
-    const totalshoppingprice = () => {
-        const totalshoppingprice =+ 2000;
-    }
-
+    
     const handleSubmit = async (event) => {
         event.preventDefault();
         await createItemRequest();
@@ -140,17 +134,6 @@ function CreateItem({ refetch }) {
                         helperText="Please type in a a short description"
                         value={description}
                         onChange={(e) => setDescription(e.target.value)}
-                        />
-                    </div>
-                    <div>
-                        <TextField
-                        id="price"
-                        label="Price"
-                        placeholder="Price"
-                        multiline
-                        helperText="Please type in the price"
-                        value={price}
-                        onChange={(e) => setName(e.target.value)}
                         />
                     </div>
                     <div>
