@@ -3,9 +3,8 @@ import AspectRatio from '@mui/joy/AspectRatio';
 import Button from '@mui/joy/Button';
 import Card from '@mui/joy/Card';
 import CardContent from '@mui/joy/CardContent';
-import IconButton from '@mui/joy/IconButton';
 import Typography from '@mui/joy/Typography';
-import BookmarkAdd from '@mui/icons-material/BookmarkAddOutlined';
+
 
 var today = new Date();
 var dd = String(today.getDate()).padStart(2, '0');
@@ -22,15 +21,6 @@ export default function PriceTag() {
           Shopping Summary
         </Typography>
         <Typography level="body2">{today}</Typography>
-        <IconButton
-          aria-label="bookmark Bahamas Islands"
-          variant="plain"
-          color="neutral"
-          size="sm"
-          sx={{ position: 'absolute', top: '0.5rem', right: '0.5rem' }}
-        >
-          <BookmarkAdd />
-        </IconButton>
       </div>
       <AspectRatio minHeight="120px" maxHeight="200px">
         <img
@@ -41,20 +31,26 @@ export default function PriceTag() {
       </AspectRatio>
       <CardContent orientation="horizontal">
         <div>
-          <Typography level="body3">Total price:</Typography>
-          <Typography fontSize="lg" fontWeight="lg">
-            $2,900
+          <Typography level="body3">Total quantity</Typography>
+          <Typography fontWeight="lg">
+            23 items
           </Typography>
         </div>
         <Button
           variant="solid"
           size="sm"
           color="primary"
-          aria-label="Explore Bahamas Islands"
-          sx={{ ml: 'auto', fontWeight: 600 }}
+          aria-label="Let's shop"
+          sx={{ ml: 'auto'}}
         >
           Shop
         </Button>
+        <div>
+          <Typography level="body3">Total shopping cost</Typography>
+          <Typography fontWeight="lg">
+            KES. 
+          </Typography>
+        </div>
       </CardContent>
     </Card>
   );

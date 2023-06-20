@@ -7,7 +7,6 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Card from '@mui/material/Card';
-import { Button } from '@mui/material';
 
 const ItemList = () => {
     const [items, setItems] = useState([]);
@@ -61,6 +60,7 @@ const ItemList = () => {
                                 <TableCell>Name</TableCell>
                                 <TableCell>Quantity</TableCell>
                                 <TableCell>Description</TableCell>
+                                <TableCell>Price</TableCell>
                             </TableRow>
                         </TableHead>
                         <TableBody>
@@ -85,6 +85,7 @@ const ItemList = () => {
                                 <TableCell>Table</TableCell>
                                 <TableCell>1</TableCell>
                                 <TableCell>Kitchen table</TableCell>
+                                <TableCell>KES. 3500</TableCell>
                             </TableRow>
                         </TableBody>
                     </Table>
