@@ -23,7 +23,6 @@ const ItemList = () => {
             }
             const data = await response.json();
             setItems(data.value);
-            console.log(items);
         } catch (error) {
             setError(error);
         }
@@ -32,7 +31,7 @@ const ItemList = () => {
 
     const deleteItem = async (id) => {
         try {
-            const response = await fetch(`/data-api/rest/Book/id/${id}`, {
+            const response = await fetch(`/data-api/rest/Item/id/${id}`, {
                 method: 'DELETE',
                 headers: {
                     'Content-Type': 'application/json',
@@ -64,7 +63,7 @@ const ItemList = () => {
                             </TableRow>
                         </TableHead>
                         <TableBody>
-                            {/* {items.map((item) => (
+                            {items.map((item) => (
                                 <TableRow
                                     key={item.id}
                                     sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
@@ -79,13 +78,7 @@ const ItemList = () => {
                                         <Button variant="contained" color="error" onClick={() => deleteItem(item.id)}>Delete</Button>
                                     </TableCell>
                                 </TableRow>
-                            ))} */}
-                            <TableRow>
-                                <TableCell>Furniture</TableCell>
-                                <TableCell>Table</TableCell>
-                                <TableCell>1</TableCell>
-                                <TableCell>Kitchen table</TableCell>
-                            </TableRow>
+                            ))}
                         </TableBody>
                     </Table>
                 </TableContainer>

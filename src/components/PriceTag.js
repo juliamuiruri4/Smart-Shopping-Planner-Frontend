@@ -13,7 +13,6 @@ var mm = String(today.getMonth() +1).padStart(2, '0');
 var yyyy = today.getFullYear();
 today = mm + '/' + dd + '/' + yyyy;
 
-// use landing-page-illustration4.png for the image
 export default function PriceTag() {
   return (
     <Card variant="outlined" sx={{ width: 320 }}>
@@ -43,7 +42,13 @@ export default function PriceTag() {
         <div>
           <Typography level="body3">Total price:</Typography>
           <Typography fontSize="lg" fontWeight="lg">
-            $2,900
+            $--
+          </Typography>
+        </div>
+        <div>
+          <Typography level="body3">Total items:</Typography>
+          <Typography fontSize="lg" fontWeight="lg">
+            --
           </Typography>
         </div>
         <Button
