@@ -1,4 +1,4 @@
-# Seamless API Development with Data API Builder
+# Seamless API Development with Data API Builder for your Static Web Apps
 
 ### Goals
 
@@ -7,24 +7,25 @@ I struggle with this very same issue and so I decided to create the ‘Smart Sho
 
 Smart Shopping Planner is a React application built using JavaScript, that stores data in an Azure SQL database. In this blog, I want to show you how incredibly easy it was to provide REST endpoints (you can work with GraphQL too) to connect the app to the database.
 
+![](/public/images/ssp-teaser.gif)
+
 | **Goal**              | Learn how to seamlessly build APIs with Data API Builder                                   |
 | ----------------------------- | --------------------------------------------------------------------- |
 | **What will you learn**       | *JavaScript, React, Azure Static Web Apps, Azure Static Web Apps CLI, Data API Builder, Azure SQLAI*                                        |
-| **What you'll need**          | *[Azure subscription](https://azure.microsoft.com), [Azure SQL Database Resource](https://portal.azure.com/#create/Microsoft.SQLDatabase), [GitHub](https://github.com/)* |
-| **Duration**                  | *1h*                                                                |
-| **Microsoft Cloud Topics taught**                  | *Azure Static Web Apps,* *Azure SQL Database*                                                                |
+| **What you'll need**          | *[Azure subscription](https://azure.microsoft.com), [GitHub](https://github.com/)* |
+| **Duration**                  | *1 hr*                                                                |
+| **Microsoft Cloud Topics taught**                  | *Azure Static Web Apps Database Connections,* *Azure SQL Database*, *Data API Builder*                                                                |
 | **Just want to try the app or see the solution?** | *Link to Step by step guide*                          |
 | **Slides** | Coming soon!
 
-### Video
-*https://youtu.be/gCrBSSOezSQ*
-
-### Pre-Learning
-Step-by-step Guide Blog
 
 ### Prerequisites
+1. VS Code
+1. Have .NET 6 SDK installed!
+1. Azure Static Web Apps CLI
 1. An Azure Subscription
-1. Azure SQL Database
+
+Begin workshop following the step-by-step guide here
 
 ### Code Snippets
 <details>
@@ -38,7 +39,7 @@ Step-by-step Guide Blog
                 description VARCHAR(200),
                 unitPrice DECIMAL(10, 2),
              totalPrice DECIMAL(10, 2)
-            );
+        );
 ![Landing-page](/public/images/sql-db-create-table.png)
 </details>
 
@@ -56,32 +57,3 @@ Step-by-step Guide Blog
     }
 </details>
 
-<details>
-    <summary>Write a function to create an item in our database and call it from the Add button.</summary>
-
-    const createItemRequest = async () => {
-        try {
-            const response = await fetch('/data-api/rest/Item', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'X-MS-API-ROLE' : 'admin',
-                },
-                body: JSON.stringify({
-                    category,
-                    name,
-                    quantity,
-                    description
-                })
-            });
-            const data = await response.json();
-            if (response.ok){
-                console.log(data);
-            } else {
-                throw new Error(data.error.message);
-            }
-        } catch (error) {
-            console.error(error);
-        }
-    }
-</details>
