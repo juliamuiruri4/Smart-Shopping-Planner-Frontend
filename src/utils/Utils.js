@@ -1,4 +1,4 @@
-export const domain = 'http://localhost:4280'   // change this to your domain
+
 // total number of items
 export const totalItems = (items) => {
     return items.reduce((total, item) => {

@@ -7,10 +7,8 @@ import TextField from '@mui/material/TextField';
 import CardContent from '@mui/material/CardContent';
 import Box from '@mui/material/Box';
 import { MenuItem, Button } from '@mui/material';
-import { domain, categories } from '../utils/Utils'
+import { categories } from '../utils/Utils'
 import Loading from './Loading';
-
-
 
 
 function CreateItem({ fetchData }) {
@@ -29,7 +27,7 @@ function CreateItem({ fetchData }) {
         } else {
             setLoading(true)  // start the loading
             try {
-                const response = await fetch(`${domain}/data-api/api/Item/`, {  // fetch data from the API
+                const response = await fetch('/data-api/api/Item/', {  // fetch data from the API
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json', 'X-MS-API-ROLE': 'admin' },
                     body: JSON.stringify({ category, name, quantity, description, unitPrice })  // send the data to the API

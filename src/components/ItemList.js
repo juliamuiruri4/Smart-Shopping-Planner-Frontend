@@ -8,7 +8,6 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Card from '@mui/material/Card';
 import { Button } from '@mui/material';
-import { domain } from '../utils/Utils'
 import Loading from './Loading';
 
 const ItemList = ({ fetchData, items }) => {
@@ -17,7 +16,7 @@ const ItemList = ({ fetchData, items }) => {
     const deleteItem = async (id) => {
         setLoading(true)   // start the loading
         try {
-            const response = await fetch(`${domain}/data-api/api/Item/id/${id}`, {   // DELETE request
+            const response = await fetch('/data-api/api/Item/id/${id}', {   // DELETE request
                 method: 'DELETE',
                 headers: {
                     'Content-Type': 'application/json',
