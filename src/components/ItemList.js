@@ -43,7 +43,7 @@ const ItemList = ({ fetchData, items }) => {
 
     return (
         <div className='item-list'>
-            {loading && <Loading />}   // show the loading component if the loading state is true
+            {loading && <Loading />}
             <Card>
                 <TableContainer component={Paper}>
                     <Table aria-label="simple table">

@@ -58,7 +58,7 @@ function CreateItem({ fetchData }) {
 
     return (
         <Card>
-            {loading && <Loading />}   // show the loading
+            {loading && <Loading />}
             <CardHeader sx={{ '& .MuiTextField-root': { m: 1 }, }}
                 action={<IconButton aria-label="settings"><MoreVertIcon /></IconButton>}
                 title="Add Item"
