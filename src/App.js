@@ -5,21 +5,13 @@ import PriceTag from './components/PriceTag';
 import { Container, Grid, Box } from '@mui/material';
 import Typography from '@mui/joy/Typography';
 import React, { useState } from 'react';
-import { domain, totalItems, totalCost } from './utils/Utils'
+import { totalItems, totalCost } from './utils/Utils'
 import Loading from './components/Loading';
-import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
 
 
 function App() {
   const [items, setItems] = useState([]);
   const [loading, setLoading] = useState(false);
-
-  const client = new ApolloClient({
-    uri: '/data-api/graphql',
-    cache: new InMemoryCache({
-      addTypename: false
-    })
-  });
 
   const fetchData = async () => {
     setLoading(true)
@@ -39,7 +31,6 @@ function App() {
   };
 
   return (
-    <ApolloProvider client={client}>
       <Container maxWidth="lg" sx={{ padding: 5 }}>
         {loading && <Loading />}
         <Typography level="h1" color="info" variant='outlined'>Smart Shopping Planner</Typography>
@@ -51,7 +42,6 @@ function App() {
           </Box>
         </Grid>
       </Container>
-    </ApolloProvider>
   );
 }
 
