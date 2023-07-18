@@ -22,38 +22,11 @@ Smart Shopping Planner is a React application built using JavaScript, that store
 ### Prerequisites
 1. VS Code
 1. Have .NET 6 SDK installed!
-1. Azure Static Web Apps CLI
 1. An Azure Subscription
 
-Begin workshop following the step-by-step guide here
+### Step-by-step Guide
+Begin workshop following the [step-by-step guide](https://techcommunity.microsoft.com/t5/educator-developer-blog/seamless-api-development-with-data-api-builder-for-your-static/ba-p/3859712?WT.mc_id=academic-101579-juliamuiruri)
 
-### Code Snippets
-<details>
-    <summary>Run the following SQL code to create a table that will store our shopping items.</summary>
-
-        CREATE TABLE ShoppingItems (
-            id INT IDENTITY(1,1) PRIMARY KEY,
-             category VARCHAR(100),
-                name VARCHAR(100),
-                quantity INT,
-                description VARCHAR(200),
-                unitPrice DECIMAL(10, 2),
-             totalPrice DECIMAL(10, 2)
-        );
-![Landing-page](/public/images/sql-db-create-table.png)
-</details>
-
-<details>
-    <summary>Add an Item entity and specify the permission</summary>
-
-    "Item": {
-      "source": "dbo.ShoppingItems",
-      "permissions": [
-        {
-          "actions": ["*"],
-          "role": "anonymous"
-        }
-      ]
-    }
-</details>
+### Workshop
+Link to the [Full Workshop](https://github.com/microsoft/workshop-library/tree/main/full/smart-shopping-planner-app)
 
