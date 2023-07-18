@@ -43,9 +43,7 @@ function CreateItem({ fetchData }) {
                 console.error(error);
                 setLoading(false)
             }
-
         }
-
     }
 
     const handleSubmit = async (event) => {

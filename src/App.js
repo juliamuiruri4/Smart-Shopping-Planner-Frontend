@@ -27,7 +27,6 @@ function App() {
       console.log(error);
       setLoading(false);
     }
-
   };
 
   return (
