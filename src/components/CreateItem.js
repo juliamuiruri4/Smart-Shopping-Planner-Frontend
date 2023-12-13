@@ -27,7 +27,7 @@ function CreateItem({ fetchData }) {
         } else {
             setLoading(true)  // start the loading
             try {
-                const response = await fetch('/data-api/api/Item/', {  // fetch data from the API
+                const response = await fetch('/data-api/rest/Item/', {  // fetch data from the API
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json', 'X-MS-API-ROLE': 'admin' },
                     body: JSON.stringify({ category, name, quantity, description, unitPrice })  // send the data to the API

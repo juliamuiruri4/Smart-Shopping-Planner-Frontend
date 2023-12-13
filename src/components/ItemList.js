@@ -16,7 +16,7 @@ const ItemList = ({ fetchData, items }) => {
     const deleteItem = async (id) => {
         setLoading(true)   // start the loading
         try {
-            const response = await fetch('/data-api/api/Item/id/${id}', {   // DELETE request
+            const response = await fetch('/data-api/rest/Item/id/${id}', {   // DELETE request
                 method: 'DELETE',
                 headers: {
                     'Content-Type': 'application/json',
