@@ -31,11 +31,28 @@
   },
   "entities": {
     "Item": {
-      "source": "dbo.ShoppingItems",
+      "source": {
+        "object": "dbo.ShoppingItems",
+        "type": "table"
+      },
+      "graphql": {
+        "enabled": true,
+        "type": {
+          "singular": "Item",
+          "plural": "Items"
+        }
+      },
+      "rest": {
+        "enabled": true
+      },
       "permissions": [
         {
-          "actions": ["*"],
-          "role": "anonymous"
+          "role": "anonymous",
+          "actions": [
+            {
+              "action": "*"
+            }
+          ]
         }
       ]
     }
